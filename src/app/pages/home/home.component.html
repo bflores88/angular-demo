@@ -1,0 +1,15 @@
+<div>
+  <div *ngFor="let user of users">
+    <div>
+      <span [style.color]="'green'" *ngIf="user.username === currentUser">
+        Username: {{ user.username }}
+      </span>
+
+      <span *ngIf="user.username !== currentUser">
+        Username: {{ user.username }}
+      </span>
+
+    </div>
+    <div>Age: {{ user.age }}</div>
+  </div>
+</div>
