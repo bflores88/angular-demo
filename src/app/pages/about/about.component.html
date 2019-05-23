@@ -1,3 +1,34 @@
 <div class="page">
   <h1>About Page</h1>
+
+  <h2>I like Movies!</h2>
+
+  <h4>Here are some of my favorite movies</h4>
+
+  <div *ngFor="let movie of movies">
+    {{movie.title}} was released in the year {{movie.year}}
+  </div>
+
+  <div>
+      <form>
+        <div>
+          <label for="title">Title</label>
+        </div>
+
+        <div>
+          <input type="text" name="title" [(ngModel)]="newMovieData.title" />
+        </div>
+
+        <div>
+          <label for="year">Year</label>
+        </div>
+
+        <div>
+          <input type="number" name="year" min="0" [(ngModel)]="newMovieData.year" />
+        </div>
+
+        <button (click)="submit()">Submit</button>
+      </form>
+    </div>
 </div>
+
