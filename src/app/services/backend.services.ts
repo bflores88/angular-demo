@@ -15,4 +15,18 @@ export class BackendService {
     const newMovie = { title, year };
     return this.http.post('/api/movies', newMovie).toPromise();
   }
+
+  register(data) {
+    return this.http.post('/api/register', data).toPromise();
+  }
+
+  login(data) {
+    return this.http.post('/api/login', data).toPromise();
+  }
+
+  logout() {
+    return this.http.get('/api/logout').toPromise();
+  }
+
+
 }

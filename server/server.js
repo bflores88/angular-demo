@@ -30,6 +30,20 @@ app.post('/api/movies', (req, res) => {
   res.json(movies);
 })
 
+app.post('/api/register', (req, res) => {
+  return res.json({ status: 'ok' });
+});
+
+app.post('/api/login', (req, res) => {
+  return res.json({ status: 'ok' });
+});
+
+app.get('/api/logout', (req, res) => {
+  return res.json({ status: 'ok' });
+});
+
+
+
 app.listen(8080, () => {
   console.log(`Server started on PORT: 8080`);
 })
