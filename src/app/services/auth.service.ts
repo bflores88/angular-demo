@@ -21,6 +21,6 @@ export class AuthService {
   logout() {
     return this.backend.logout().then((response) => {
       return this.session.clearSession();
-    })
+    });
   }
 }
