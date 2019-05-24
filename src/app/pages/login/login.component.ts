@@ -21,9 +21,14 @@ export class LoginComponent {
     this.auth
       .login(this.formData)
       .then(() => {
-        console.log('user logged in');
-        //redirects to the home page
-        this.router.navigate(['/'])
+        const { redirectUrl } = this.auth;
+        if (redirectUrl) {
+          this.router.navigate([redirectUrl]);
+          this.auth.redirectUrl = '';
+        } else {
+          //redirects to the home page
+          this.router.navigate(['/']);
+        }
       })
       .catch((err) => {
         console.log('error: ', err);

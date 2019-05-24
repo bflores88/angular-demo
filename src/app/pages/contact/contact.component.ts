@@ -27,6 +27,7 @@ export class ContactComponent {
   constructor() {}
 
   ValidateName() {
+    console.log('validate name function')
     const { name } = this.formData;
 
     if (!name) {
